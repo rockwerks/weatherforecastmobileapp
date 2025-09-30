@@ -14,6 +14,7 @@ export const useWeather = (city: string) => {
       try {
         const data = await WeatherApi.fetchWeatherData(city);
         setWeatherData(data);
+        console.log("Fetched weather data:", data);
       } catch (err) {
         setError("Failed to fetch weather data");
       } finally {

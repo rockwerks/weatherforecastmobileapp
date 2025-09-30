@@ -1,16 +1,16 @@
 import axios from "axios";
 
-const API_KEY = process.env.WEATHER_API_KEY;
-const BASE_URL = process.env.API_BASE_URL;
+const EXPO_PUBLIC_API_KEY = process.env.EXPO_PUBLIC_WEATHER_API_KEY;
+const EXPO_PUBLIC_BASE_URL = process.env.EXPO_PUBLIC_API_BASE_URL;
 
 export const WeatherApi = {
   async fetchWeatherData(
     city: string,
     unitType: "metric" | "imperial" = "metric"
   ) {
-    console.log(BASE_URL);
+    console.log(`Fetching weather data for ${city} with unit type ${unitType}`, EXPO_PUBLIC_BASE_URL);
     try {
-      const url = `${BASE_URL}?q=${city}&units=${unitType}&appid=${API_KEY}`;
+      const url = `${EXPO_PUBLIC_BASE_URL}?q=${city}&units=${unitType}&appid=${EXPO_PUBLIC_API_KEY}`;
       const response = await axios.get(url);
 
       return response.data;
