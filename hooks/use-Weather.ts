@@ -2,8 +2,26 @@ import { useEffect, useState } from "react";
 // Update the import path below to the correct relative path for your project structure
 import { WeatherApi } from "@/services/WeatherApi";
 
+export type WeatherData = {
+  weather: { id: number; main: string; description: string; icon: string }[];
+  main: {
+    temp: number;
+    feels_like: number;
+    temp_min: number;
+    temp_max: number;
+    pressure: number;
+    humidity: number;
+  };
+  wind: { speed: number; deg: number };
+  sys: { country: string; sunrise: number; sunset: number };
+  name: string;
+  dt: number;
+  visibility: number;
+  clouds: { all: number };
+};
+
 export const useWeather = (city: string) => {
-  const [weatherData, setWeatherData] = useState<any>(null);
+  const [weatherData, setWeatherData] = useState<WeatherData | null>(null);
   const [loading, setLoading] = useState<boolean>(true);
   const [error, setError] = useState<string | null>(null);
 

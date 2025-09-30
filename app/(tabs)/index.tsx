@@ -120,9 +120,9 @@ const App = () => {
           </Pressable>
                         <View style={styles.weatherMainContainer}>
                 <IconSymbol
-                  size={80}
-                  color="#333"
-                  name={getWeatherIcon(weatherData.weather[0].main, weatherData.weather[0].id)}
+                  size={100}
+                  color="#4d4f4fff"
+                  name={weatherData ? getWeatherIcon(weatherData.weather[0].main, weatherData.weather[0].id) : 'questionmark.circle.fill'}
                   style={styles.weatherIcon}
                 />
           <Text style={styles.title}>{weatherData?.name}, {weatherData?.sys?.country}</Text>
