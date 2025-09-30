@@ -1,7 +1,7 @@
 // Fallback for using MaterialIcons on Android and web.
 
 import MaterialIcons from '@expo/vector-icons/MaterialIcons';
-import { SymbolViewProps, SymbolWeight } from 'expo-symbols';
+import { SymbolWeight } from 'expo-symbols';
 import { ComponentProps } from 'react';
 import { OpaqueColorValue, type StyleProp, type TextStyle } from 'react-native';
 
@@ -21,7 +21,26 @@ type IconSymbolName =
   | 'wind'
   | 'humidity'
   | 'gauge'
-  | 'location.fill';
+  | 'location.fill'
+  | 'cloud.fill'
+  | 'cloud.heavyrain.fill'
+  | 'cloud.drizzle.fill'
+  | 'cloud.sleet.fill'
+  | 'cloud.bolt.rain.fill'
+  | 'cloud.fog.fill'
+  | 'sun.dust.fill'
+  | 'tornado'
+  | 'questionmark.circle.fill'
+  | 'thermometer'
+  | 'drop.fill'
+  | 'barometer'
+  | 'eye.fill'
+  | 'sunrise.fill'
+  | 'sunset.fill'
+  | 'cloud.drizzle'
+  | 'snow'
+  | 'thunderstorm'
+  | 'mist';
 
 /**
  * Add your SF Symbols to Material Icons mappings here.
@@ -34,19 +53,38 @@ const MAPPING: Record<IconSymbolName, ComponentProps<typeof MaterialIcons>['name
   'chevron.left.forwardslash.chevron.right': 'code',
   'chevron.right': 'chevron-right',
   'sun.max.fill': 'wb-sunny',
-  'cloud.rain.fill': 'cloudy-snowing',
-  'cloud.sun.fill': 'wb-sunny',
+  'cloud.rain.fill': 'grain',
+  'cloud.sun.fill': 'wb-cloudy',
   'sun.cloudy.fill': 'wb-cloudy',
   'moon.fill': 'nights-stay',
   'cloud.moon.fill': 'nightlight',
   'cloud.bolt.fill': 'thunderstorm',
-  'cloud.snow.fill': 'snowing',
+  'cloud.snow.fill': 'snowing', 
   'wind': 'air',
-  'humidity': 'water',
+  'humidity': 'water-drop',
   'gauge': 'speed',
   'location.fill': 'my-location',
+  // Additional weather icons
+  'cloud.fill': 'cloud',
+  'cloud.heavyrain.fill': 'thunderstorm',
+  'cloud.drizzle.fill': 'grain',
+  'cloud.sleet.fill': 'ac-unit',
+  'cloud.bolt.rain.fill': 'thunderstorm',
+  'cloud.fog.fill': 'blur-on',
+  'sun.dust.fill': 'wb-sunny',
+  'tornado': 'cyclone',
+  'questionmark.circle.fill': 'help-outline',
+  'thermometer': 'thermostat',
+  'drop.fill': 'water-drop',
+  'barometer': 'compress',
+  'eye.fill': 'visibility',
+  'sunrise.fill': 'wb-twilight',
+  'sunset.fill': 'wb-twilight',
+  'cloud.drizzle': 'grain',
+  'snow': 'ac-unit',
+  'thunderstorm': 'thunderstorm',
+  'mist': 'blur-on',
 };
-
 /**
  * An icon component that uses native SF Symbols on iOS, and Material Icons on Android and web.
  * This ensures a consistent look across platforms, and optimal resource usage.
