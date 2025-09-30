@@ -74,6 +74,7 @@ const App = () => {
           >
             <Text style={styles.buttonText}>Get Started</Text>
           </Pressable>
+          <Text>{weatherData ? weatherData.weather[0].main : ''}</Text>
           <Text>{JSON.stringify(weatherData, null, 2)}</Text>
           <Text>{error}</Text>
           <Text>{loading ? 'Loading...' : ''}</Text>
