@@ -1,24 +1,51 @@
 // Fallback for using MaterialIcons on Android and web.
 
 import MaterialIcons from '@expo/vector-icons/MaterialIcons';
-import { SymbolWeight, SymbolViewProps } from 'expo-symbols';
+import { SymbolViewProps, SymbolWeight } from 'expo-symbols';
 import { ComponentProps } from 'react';
 import { OpaqueColorValue, type StyleProp, type TextStyle } from 'react-native';
 
-type IconMapping = Record<SymbolViewProps['name'], ComponentProps<typeof MaterialIcons>['name']>;
-type IconSymbolName = keyof typeof MAPPING;
+type IconSymbolName =
+  | 'house.fill'
+  | 'paperplane.fill'
+  | 'chevron.left.forwardslash.chevron.right'
+  | 'chevron.right'
+  | 'sun.max.fill'
+  | 'cloud.rain.fill'
+  | 'cloud.sun.fill'
+  | 'sun.cloudy.fill'
+  | 'moon.fill'
+  | 'cloud.moon.fill'
+  | 'cloud.bolt.fill'
+  | 'cloud.snow.fill'
+  | 'wind'
+  | 'humidity'
+  | 'gauge'
+  | 'location.fill';
 
 /**
  * Add your SF Symbols to Material Icons mappings here.
  * - see Material Icons in the [Icons Directory](https://icons.expo.fyi).
  * - see SF Symbols in the [SF Symbols](https://developer.apple.com/sf-symbols/) app.
  */
-const MAPPING = {
+const MAPPING: Record<IconSymbolName, ComponentProps<typeof MaterialIcons>['name']> = {
   'house.fill': 'home',
   'paperplane.fill': 'send',
   'chevron.left.forwardslash.chevron.right': 'code',
   'chevron.right': 'chevron-right',
-} as IconMapping;
+  'sun.max.fill': 'wb-sunny',
+  'cloud.rain.fill': 'cloudy-snowing',
+  'cloud.sun.fill': 'wb-sunny',
+  'sun.cloudy.fill': 'wb-cloudy',
+  'moon.fill': 'nights-stay',
+  'cloud.moon.fill': 'nightlight',
+  'cloud.bolt.fill': 'thunderstorm',
+  'cloud.snow.fill': 'snowing',
+  'wind': 'air',
+  'humidity': 'water',
+  'gauge': 'speed',
+  'location.fill': 'my-location',
+};
 
 /**
  * An icon component that uses native SF Symbols on iOS, and Material Icons on Android and web.
